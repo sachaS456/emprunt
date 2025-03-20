@@ -1,9 +1,8 @@
+import {calculEmpruntAmortConst} from "../calculEmprunt.js";
 import PropTypes from "prop-types";
-import calculEmpruntAnnuiteConst from "../calculEmprunt.js";
 
-export default function TabAnnuiteContant({solde, taux, n, annuel}) {
-
-    const data = calculEmpruntAnnuiteConst(solde, taux, n, annuel);
+function TabAmortissementConstant({solde, taux, n, annuel}) {
+    const data = calculEmpruntAmortConst(solde, taux, n, annuel);
     return (
         <table>
             <thead>
@@ -41,9 +40,11 @@ export default function TabAnnuiteContant({solde, taux, n, annuel}) {
     )
 }
 
-TabAnnuiteContant.propTypes = {
+TabAmortissementConstant.propTypes = {
     solde: PropTypes.number.isRequired,
     taux: PropTypes.number.isRequired,
     n: PropTypes.number.isRequired,
     annuel: PropTypes.string.isRequired,
 }
+
+export default TabAmortissementConstant;
